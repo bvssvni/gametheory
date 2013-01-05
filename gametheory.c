@@ -5,12 +5,12 @@
 
 #include "gametheory.h"
 
-int gametheory_NumberOfRewards(const gametheory_game g)
+int gametheory_NumberOfPayoffs(const gametheory_game g)
 {
 	return g.players * (int)pow(g.choices, g.players);
 }
 
-int gametheory_RewardIndex
+int gametheory_PayoffIndex
 (const gametheory_game g, int player, int playerChoices[])
 {
 	assert(player >= 0);

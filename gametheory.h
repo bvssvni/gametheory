@@ -49,10 +49,10 @@ typedef struct gametheory_game
 //	3	3	18	81
 //	choices
 //
-int gametheory_NumberOfRewards(const gametheory_game g);
+int gametheory_NumberOfPayoffs(const gametheory_game g);
 
 // Returns an index of an reward for a given player and choices in a game.
-int gametheory_RewardIndex
+int gametheory_PayoffIndex
 (const gametheory_game g, int player, int playerChoices[]);
 
 #endif
