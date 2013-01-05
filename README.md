@@ -14,4 +14,12 @@ It uses a bash script combined with C preprocessor-macroes to compile and run th
 ##Introduction
 
 Game theory is the study of strategic decision making.  
-Unfortunately, it 
+
+A "normal form" is represented as a multi-dimensional grid where each payoff depends on the combination of choices.  
+The number of items in a such grid increases with:
+
+    players * choices ^ players
+
+It is therefore only practical to deal with games with relative few players.  
+
+This module helps you to calculate the index position in a such grid.  
