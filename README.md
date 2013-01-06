@@ -19,6 +19,8 @@ A "normal form" is represented as a multi-dimensional grid where each payoff dep
 The number of items in a such grid increases with:
 
     players * choices ^ players
+    
+This is for a Symmetric game, where all players have the same number of choices.
 
 It is therefore only practical to deal with games with relative few players.  
 
