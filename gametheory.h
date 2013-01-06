@@ -33,13 +33,18 @@
 #ifndef GAMETHEORY_GUARD
 #define GAMETHEORY_GUARD
 
-typedef struct gametheory_game
+typedef struct gametheory_symmetric_game
 {
 	int players;
 	int choices;
-} gametheory_game;
+} gametheory_symmetric_game;
 
-// The number of rewards in a game depends on number of players and choices.
+typedef struct gametheory_asymmetric_game
+{
+	int players;
+} gametheory_asymmetric_game;
+
+// The number of payoffs in a game depends on number of players and choices.
 //
 // players * choices^players
 //
@@ -49,11 +54,20 @@ typedef struct gametheory_game
 //	3	3	18	81
 //	choices
 //
-int gametheory_NumberOfPayoffs(const gametheory_game g);
+int gametheory_symmetric_NumberOfPayoffs(const gametheory_symmetric_game g);
 
-// Returns an index of an reward for a given player and choices in a game.
-int gametheory_PayoffIndex
-(const gametheory_game g, int player, int playerChoices[]);
+// Returns an index of an payoff for a given player +set of choices in a game.
+int gametheory_symmetric_PayoffIndex
+(const gametheory_symmetric_game g, int player, int playerChoices[]);
+
+// Returns the number of payoffs in an assymmetric game.
+int gametheory_asymmetric_NumberOfPayoffs
+(const gametheory_asymmetric_game g, const int choices[]);
+
+// Returns an index of an payoff for a given player + set of choices in a game.
+int gametheory_asymmetric_PayoffIndex
+(const gametheory_asymmetric_game g, int choices[],
+ int player, int playerChoices[]);
 
 #endif
 
